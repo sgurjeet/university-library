@@ -1,0 +1,25 @@
+<form #editBookForm (ngSubmit)="formSubmit(editBookForm)">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="name">Book Name</label>
+        <input type="text" disabled class="form-control" id="bookName" name="bookName" placeholder="Book Name"
+               [(ngModel)]="selectedBook.name">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="author">Book Author</label>
+        <input type="text" class="form-control" id="bookAuthor" name="bookAuthor" placeholder="Author" [(ngModel)]="selectedBook.author">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-group">
+          <input type="checkbox" name="isAvailBook" [(ngModel)]="isChecked"> Is Available?
+      </div>
+    </div>
+  </div>  
+    <button type="submit" class="btn btn-success" >Submit</button>
+</form>

@@ -1,0 +1,25 @@
+<h3 [ngStyle] = "getTitleStyles()">Book List</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th>{{tableTitle}}</th>
+        <th>{{tableAuthor}}</th>
+        <th>{{tableIsAvail}}</th>
+        <th>Action</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList">
+        <td>{{book.name | customUpperCase}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.isAvail}}</td>
+        <td><button class="btn btn-info" (click)=editBook(book) [disabled]="displayEdit">Edit</button></td>
+        <td><button class="btn btn-danger" (click)=deleteBook(book)>Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <form>
+
+<app-edit-book *ngIf="displayEdit" [selectedBook]="currBook"  
+      (bookUpdated)="updateBook($event)"></app-edit-book>

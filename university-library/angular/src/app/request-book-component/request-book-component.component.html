@@ -1,0 +1,20 @@
+<div class="row">
+    <div clss="col-md-12">
+      <form #addBookForm (ngSubmit)="addBook(addBookForm)">
+        <div class="form-group">
+          <label for="name">Book Name:</label>
+          <input type="text" class="form-control" id="pwd" name="bookName">
+        </div>
+        <div class="form-group">
+          <label for="author">Author:</label>
+          <input type="text" class="form-control" id="pwd" name="bookAuthor">
+        </div>
+        <div class="form-group">
+          <label>Is Available :
+            <input type="checkbox" name="bookAvail" [(ngModel)]="isChecked" ng-true-value="'Yes'" ng-false-value="'No'">
+          </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
